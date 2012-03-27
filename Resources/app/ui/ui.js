@@ -79,8 +79,20 @@
       button.title = 'stop';
     };
 
+    var _stopStopwatch = function() {
+      clearInterval(intervalId);
+      button.title = 'Start';
+    };
+
+    var started = false;
     button.addEventListener('click', function() {
-      _startStopwatch();
+      if (started) {
+        _stopStopwatch();
+        started = false;
+      } else {
+        _startStopwatch();
+        started = true;
+      }
     });
 
 		return tab;
