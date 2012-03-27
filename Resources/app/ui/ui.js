@@ -106,12 +106,18 @@
       barColor: style.barColor,
 			backgroundColor: style.backgroundColor
 		});
+
 		var tab = Titanium.UI.createTab({
 			icon: 'dark_info.png',
 			title: '使い方',
 			window: win
 		});
-		
+
+    var web = Ti.UI.createWebView({
+      url: 'how_to_play.html'
+    });
+    win.add(web);
+
 		return tab;
 	}
 })();
